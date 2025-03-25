@@ -1,4 +1,4 @@
-class Solution {
+class Solution {//the index of arr starts with 1
     public int[] twoSum(int[] arr, int target) {
        int left = 0, right =arr.length-1;
        while(left<right){
@@ -12,5 +12,5 @@ class Solution {
         }
        }
        return null;
-    }
+    }// two pointer method 
 }
