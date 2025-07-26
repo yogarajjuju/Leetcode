@@ -29,7 +29,7 @@ class Solution {
                 if(solve(board)){
                     return true;
                 } else{
-                    board[row][col]='.';
+                    board[row][col]='.';//backtrack 
                 }
             }
         }
