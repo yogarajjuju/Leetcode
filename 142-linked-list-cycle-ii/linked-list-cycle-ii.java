@@ -16,13 +16,13 @@ public class Solution {
             slow = slow.next;
             fast=fast.next.next;
             if(slow==fast){
-                fast=head;
+                fast=head;// it is used to start the fast pointer to traverse from the head or we can change the slow = head but we need to move both by 1 only
 
                 while(slow !=fast){
                     fast=fast.next;
                     slow=slow.next;
                 }
-                return fast;
+                return fast;// here we can return anyone of the pointers
             }
         }
         return null;
