@@ -12,6 +12,7 @@
 public class Solution {
     public boolean hasCycle(ListNode head) {
         ListNode fast =head, slow = head;
+        // Floyd’s Cycle Detection or fast and slow pointer or totoise and hare method 
 
         while(fast!=null&& fast.next!=null){
             slow=slow.next;
