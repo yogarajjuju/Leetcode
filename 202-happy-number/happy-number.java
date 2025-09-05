@@ -1,4 +1,6 @@
 class Solution {
+
+    // by using fast and skow pointer method ;
     public boolean isHappy(int n) {
         int slow = n , fast = n;
         do{
