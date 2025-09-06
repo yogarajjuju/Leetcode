@@ -8,17 +8,19 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+ //iteration way
 class Solution {
     public ListNode reverseList(ListNode head) {
-        if(head==null||head.next==null) return head;
+        ListNode prev=null;
+        ListNode present=head;
+        while(present!=null){
+             ListNode next=present.next; /// save the next node;
+             present.next=prev;//reverse the list
+             prev=present;//move the perv forward;
 
-        ListNode newhead=reverseList(head.next);
-        head.next.next=head;
-        head.next=null;
-        return newhead;
-        // recursive way
-
-
+             present=next;//move present forward
+        }
+        return prev; //  this is new head of the list
         
     }
 }
