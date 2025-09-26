@@ -1,16 +1,22 @@
 class Solution {
     public int subarraySum(int[] nums, int k) {
-        int max =0;
-        for(int i = 0;i<nums.length;i++){
-            int sum =0;
-            for(int j = i;j<nums.length;j++){
-                sum+=nums[j];
+        int n = nums.length;
+       
+         
+         int count =0;
+        for(int start =0;start<n;start++){
+             int sum =0;
+            
+            for(int end=start;end<n;end++){
+                sum+=nums[end];
                 if(sum==k){
-                   max++;
-
-                }
+                count++;
             }
+
+            } 
+           
         }
-        return max;
+        return count;
+        
     }
 }
