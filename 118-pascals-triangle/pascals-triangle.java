@@ -1,24 +1,24 @@
 class Solution {
     public List<List<Integer>> generate(int numRows) {
-        List<List<Integer>>  result =new ArrayList<>();
-        if(numRows==0) return result;
-        List<Integer> firstrow = new ArrayList<>();
-        firstrow.add(1);
-        result.add(firstrow);
-        if(numRows==1) return result;
-        for(int i=1;i<numRows;i++){
-            List<Integer> prevrow=result.get(i-1);
-            ArrayList<Integer> row = new ArrayList<>();
-            row.add(1);
+        List<List<Integer>> triangle = new ArrayList<>();
 
-            for(int j=0;j<i-1;j++){
-                row.add(prevrow.get(j)+prevrow.get(j+1));
+        if(numRows==0) return triangle;
 
+
+        for(int i=0; i<numRows;i++){
+            List<Integer> newrow=new ArrayList<>();
+            for(int j=0; j<=i;j++){
+                if(j==0||j==i){
+                    newrow.add(1);
+                } else{
+                  List<Integer> prevrow=triangle.get(i-1);
+                  int num =prevrow.get(j-1)+prevrow.get(j);
+                  newrow.add(num);
             }
-            row.add(1);
-            result.add(row);
+            }
+            triangle.add(newrow);
         }
-        return result;
+        return triangle;
         
     }
 }
